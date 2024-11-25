@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&family=Lexend+Deca&display=swap");
+
+$bright-orange: hsl(31, 77%, 52%);
+$cyan: hsl(184, 100%, 22%);
+$dark-cyan: hsl(179, 100%, 13%);
+
+$transparent-white: hsla(0, 0%, 100%, 0.75);
+$light-gray: hsl(0, 0%, 95%);
+
+$font-family-title: "Big Shoulders Display", sans-serif;
+$font-family-text: "Lexend Deca", sans-serif;
+
+body {
+  margin: 0;
+  font-family: $font-family-text;
+  background-color: $light-gray;
+  color: #333;
+  font-size: 15px;
+}
+
+.car-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+
+  &__item {
+    border-radius: 8px;
+    padding: 40px 20px;
+    text-align: center;
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: $light-gray;
+    &--sedan {
+      background-color: $bright-orange;
+      a {
+        color: $bright-orange;
+      }
+    }
+
+    &--suv {
+      background-color: $cyan;
+      a {
+        color: $cyan;
+      }
+    }
+
+    &--luxury {
+      background-color: $dark-cyan;
+      a {
+        color: $dark-cyan;
+      }
+    }
+  }
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 10px;
+    background: url("./icons.png") no-repeat;
+    background-size: contain;
+  }
+
+  &__title {
+    font-family: $font-family-title;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: $light-gray;
+    color: inherit;
+    border: 1px solid $light-gray;
+
+    &:hover {
+      background-color: unset;
+      color: $light-gray;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .car-categories__item {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .car-categories {
+    padding: 30px 10px;
+  }
+
+  .car-categories__item {
+    padding: 35px 15px;
+  }
+}
